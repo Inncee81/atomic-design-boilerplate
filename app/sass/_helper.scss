@@ -1,0 +1,11 @@
+// Remove
+@mixin remove {
+	display: none;
+	visibility: hidden;
+}
+
+// Show
+@mixin show {
+	display: block;
+	visibility: visible;
+}

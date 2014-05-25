@@ -1,0 +1,83 @@
+// Summer of Dev Print
+// Incorporates components of HTML5 Boilerplate
+
+@media print {
+
+	* {
+		background: transparent !important;
+		color: #000 !important; // Black prints faster: h5bp.com/s
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	@page {
+		margin: 0.5cm;
+	}
+
+
+
+
+	// EMBEDDED CONTENT
+	img {
+		max-width: 100% !important;
+		page-break-inside: avoid;
+	}
+
+
+
+
+	// LINK
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	// Don't show links for images, or javascript/internal links
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+
+
+
+	// TABLE
+	thead {
+		display: table-header-group; // h5bp.com/t
+	}
+
+	tr {
+		page-break-inside: avoid;
+	}
+
+
+
+
+	// TYPOGRAPHY
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+}

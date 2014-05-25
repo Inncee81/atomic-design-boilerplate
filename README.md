@@ -1,4 +1,6 @@
-blueprint
+Blueprint
 =========
 
-A no frills way of getting your next web project up and running. Set up a blueprint and build from there!
+A no frills way of getting your next web project up and running.
+
+We open people's eyes to what is possible.

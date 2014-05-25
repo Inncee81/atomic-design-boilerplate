@@ -1,0 +1,18 @@
+{
+  "name": "blueprint",
+  "version": "0.1.0",
+  "homepage": "https://github.com/summer-of-dev/blueprint",
+  "authors": [
+    "Te Riu Adams-Smith-Warren <te@summerofdev.co.nz>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {}
+}
