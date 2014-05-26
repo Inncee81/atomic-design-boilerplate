@@ -1,4 +1,4 @@
-<?php
+<?
 
 	// Declare site wide variables
 	$site_name = 'NAME_OF_SITE';
