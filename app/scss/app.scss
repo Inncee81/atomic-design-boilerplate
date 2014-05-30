@@ -3,10 +3,11 @@
 
 // Dependencies
 @import "bourbon";
-@import "../components/normalize.css/normalize.css";
-@import "../components/breakpoint/breakpoint/breakpoint";
-@import "breakpoint-slicer";
+@import "../components/normalize.css/normalize";
+@import "../components/slice/slicer";
 
+
+// Setup
 @import "settings";
 @import "functions";
 

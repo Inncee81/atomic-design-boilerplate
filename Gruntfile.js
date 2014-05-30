@@ -100,6 +100,16 @@ module.exports = function (grunt) {
 				cwd: '<%= config.app %>/js/',
 				dest: '<%= config.dist %>/js/',
 				src: '{,*/}*.min.js'
+			},
+			cssAsScss: {
+				files: [{
+					expand: true,
+					cwd: '<%= config.app %>/components/normalize.css/',
+					src: ['**/*.css', '!**/*.min.css'],
+					dest: '<%= config.app %>/components/normalize.css/',
+					filter: 'isFile',
+					ext: '.scss'
+				}]
 			}
 		},
 

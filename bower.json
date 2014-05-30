@@ -14,7 +14,7 @@
     "modernizr": "~2.8.2",
     "jquery": "~2.1.1",
     "normalize.css": "~3.0.1",
-    "breakpoint": "~4.6.4"
+    "slice": "~1.0.1"
   },
   "devDependencies": {}
 }
