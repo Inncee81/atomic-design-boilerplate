@@ -2,7 +2,7 @@
 
 /*
 	Created by Summer of Dev
-	Version 1.3.0 - 25/05/2014
+	Version 1.3.1 - 30/05/2014
 */
 
 module.exports = function (grunt) {
@@ -53,6 +53,21 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// Copy bower files to live folder
+		bowercopy: {
+			options: {
+				srcPrefix: '<%= config.app %>/components'
+			},
+			scripts: {
+				options: {
+					destPrefix: '<%= config.dist %>/components'
+				},
+				files: {
+					'jquery/dist/jquery.js': 'jquery/dist/jquery.js'
+				}
+			}
+		},
+
 		// Copies remaining files to places other tasks can use
 		copy: {
 			dist: {
@@ -67,7 +82,8 @@ module.exports = function (grunt) {
 						'.htaccess',
 						'img/{,*/}*.webp',
 						'{,*/}*.php',
-						'fonts/{,*/}*.*'
+						'font/{,*/}*.*',
+						'components/{,*/}*.*'
 					]
 				}]
 			},
@@ -109,6 +125,7 @@ module.exports = function (grunt) {
 			all: [
 				'Gruntfile.js',
 				'<%= config.app %>/js/{,*/}*.js',
+				'!<%= config.app %>/js/*.min.js',
 				'!<%= config.app %>/js/vendor/*',
 				'test/spec/{,*/}*.js'
 			]
@@ -242,6 +259,7 @@ module.exports = function (grunt) {
 		'concurrent:dist',
 		'autoprefixer',
 		'copy:dist',
+		'bowercopy'
 	]);
 
 
