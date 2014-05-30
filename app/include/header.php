@@ -16,7 +16,7 @@
 		<!-- TODO: Description/Keyword Meta tags -->
 		<title><?= $site_name ?> | <?= $page_name ?></title>
 		<link rel="shortcut icon" href="/favicon.ico">
-		<link rel="stylesheet" href="/css/site.css">
+		<link rel="stylesheet" href="/css/app.css">
 		<script src="/components/modernizr/modernizr.js"></script>
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

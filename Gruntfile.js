@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 				}
 			},
 			sass: {
-				files: ['<%= config.app %>/sass/{,*/}*.scss'],
+				files: ['<%= config.app %>/scss/{,*/}*.scss'],
 				tasks: ['sass:server', 'autoprefixer']
 			},
 			livereload: {
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '<%= config.app %>/sass',
+					cwd: '<%= config.app %>/scss',
 					src: ['*.scss'],
 					dest: '<%= config.app %>/css',
 					ext: '.css'
@@ -175,7 +175,7 @@ module.exports = function (grunt) {
 			server: {
 				files: [{
 					expand: true,
-					cwd: '<%= config.app %>/sass',
+					cwd: '<%= config.app %>/scss',
 					src: ['*.scss'],
 					dest: '<%= config.app %>/css',
 					ext: '.css'
