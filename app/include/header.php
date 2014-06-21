@@ -14,6 +14,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="apple-mobile-web-app-title" content="<?= $site_app_name ?>">
 		<!-- TODO: Description/Keyword Meta tags -->
+
+
 		<title><?= $site_name ?> | <?= $page_name ?></title>
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="stylesheet" href="/css/app.css">

@@ -4,5 +4,4 @@ node_modules
 bower_components
 test/bower_components
 *.log
-app/components
 site.css.map
