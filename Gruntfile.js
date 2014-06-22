@@ -2,7 +2,7 @@
 
 /*
 	Created by Summer of Dev
-	Version 1.3.1 - 30/05/2014
+	Version 1.3.2 - 22/06/2014
 */
 
 module.exports = function (grunt) {
@@ -191,7 +191,7 @@ module.exports = function (grunt) {
 					ext: '.css'
 				}],
 				options: {
-					sourceComments: 'map'
+					sourceMap: true
 				}
 			}
 		},
