@@ -242,7 +242,7 @@ module.exports = function (grunt) {
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
 			dist: [
-				'sass',
+				'sass:dist',
 				'copy:styles',
 				'copy:scripts',
 				'imagemin',
@@ -266,8 +266,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'uglify:dist',
-		'concurrent:dist',
 		'autoprefixer',
+		'concurrent:dist',
 		'copy:dist',
 		'bowercopy'
 	]);
