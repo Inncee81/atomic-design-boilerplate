@@ -77,13 +77,11 @@ module.exports = function (grunt) {
 					cwd: '<%= config.app %>',
 					dest: '<%= config.dist %>',
 					src: [
-						'{,*/}*.html',
+						'{,*/}*.{html,php}',
 						'*.{ico,png,txt}',
 						'.htaccess',
 						'img/{,*/}*.webp',
-						'{,*/}*.php',
-						'font/{,*/}*.*',
-						'components/{,*/}*.*'
+						'{font,components,manage}/{,*/,**/}*.*'
 					]
 				}]
 			},
