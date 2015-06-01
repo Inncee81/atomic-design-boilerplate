@@ -1,6 +1,6 @@
 {
-  "directory": "app/components",
+  "directory": "vendor/bower_components",
   "scripts": {
-    "postinstall": "grunt copy:cssAsScss"
+    "postinstall": "gulp copy"
   }
 }

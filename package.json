@@ -1,33 +1,31 @@
 {
-	"name": "blueprint",
-	"version": "0.3.1",
-	"repository": "summer-of-dev/blueprint",
-	"author": {
-		"name": "Summer of Dev",
-		"email": "te@summerofdev.co.nz",
-		"url": "https://github.com/summer-of-dev/blueprint"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-autoprefixer": "~1.0.0",
-		"grunt-bowercopy": "~1.1.0",
-		"grunt-concurrent": "~0.5.0",
-		"grunt-contrib-copy": "~0.5.0",
-		"grunt-newer": "~0.7.0",
-		"grunt-sass": "~0.14.0",
-		"grunt-svgmin": "~0.4.0",
-		"grunt-contrib-clean": "~0.6.0",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-contrib-imagemin": "~0.8.0",
-		"grunt-contrib-uglify": "~0.5.0",
-		"grunt-contrib-watch": "~0.6.1",
-		"jshint-stylish": "~0.4.0",
-		"node-bourbon": "~1.2.3",
-		"load-grunt-tasks": "~0.6.0",
-		"time-grunt": "~0.4.0"
-	},
-	"engines": {
-		"node": ">=0.10.0"
-	}
+  "name": "blueprint",
+  "version": "2.0.0",
+  "description": "Summer of Dev Blueprint",
+  "repository": "summer-of-dev/blueprint",
+  "author": {
+    "name": "Te Riu Warren",
+    "email": "te@summerofdev.com",
+    "url": "https://github.com/summer-of-dev/"
+  },
+  "devDependencies": {
+    "browserify": "^10.1.3",
+    "browserify-shim": "^3.8.6",
+    "gulp": "^3.8.11",
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-shell": "^0.4.1",
+    "gulp-uglify": "^1.2.0",
+    "laravel-elixir": "^0.18.7",
+    "laravel-elixir-jshint": "^0.1.7",
+    "laravel-elixir-livereload": "0.0.3",
+    "node-bourbon": "^4.2.2"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jQuery": "global:jQuery"
+  }
 }

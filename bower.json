@@ -1,23 +1,19 @@
 {
   "name": "blueprint",
-  "version": "0.2.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/summer-of-dev/blueprint",
   "authors": [
     "Te Riu Warren <te@summerofdev.co.nz>"
   ],
+  "moduleType": [
+    "node"
+  ],
   "license": "MIT",
   "dependencies": {
     "modernizr": "~2.8.3",
-    "jquery": "~2.1.1",
-    "normalize.css": "~3.0.1",
-    "slice": "~1.0.1"
+    "jquery": "~2.1.4",
+    "normalize.css": "~3.0.3",
+    "slice": "~1.1.0"
   },
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/components",
-    "test",
-    "tests"
-  ]
+  "devDependencies": {}
 }

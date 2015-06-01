@@ -1,7 +1,8 @@
 node_modules
+bower_components
+/vendor
+.vagrant
 .tmp
 .sass-cache
-bower_components
-test/bower_components
 *.log
-site.css.map
+*.map
