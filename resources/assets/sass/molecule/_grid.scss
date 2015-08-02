@@ -26,11 +26,11 @@
 
 @include make-grid(sm);
 
-@include from(3) {
+@include from('small') {
     @include make-grid(md);
 }
 
-@include from(5) {
+@include from('regular') {
     @include make-grid(lg);
 }
 
