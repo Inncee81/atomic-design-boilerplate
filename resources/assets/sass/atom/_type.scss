@@ -6,6 +6,8 @@ html {
     font-size: 16px;
     line-height: $spacing-primary;
     text-rendering: geometricPrecision;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0); // Reset
 }
 
 h1,
@@ -69,25 +71,25 @@ a {
 
 
 // Transformation
-.uppercase {
+.text-uppercase {
     text-transform: uppercase;
 }
 
-.lowercase {
+.text-lowercase {
     text-transform: lowercase;
 }
 
 
 
 // Alignment
-.left {
+.text-left {
     text-align: left;
 }
 
-.center {
+.text-center {
     text-align: center;
 }
 
-.right {
+.text-right {
     text-align: right;
 }
