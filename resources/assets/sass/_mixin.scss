@@ -1,0 +1,20 @@
+/*
+    Mixins
+ */
+@mixin make-grid($class) {
+    $columns: $grid-columns;
+
+    @for $index from 1 through $columns {
+        .column-#{$class}-#{$index} {
+            $gutter: map-get($grid-gutter-width, $class);
+            $width: percentage(($index / $grid-columns));
+
+            @if $width != 100% {
+                width: calc(#{$width} - #{$gutter});
+            }
+            @else {
+                width: 100%;
+            }
+        }
+    }
+}

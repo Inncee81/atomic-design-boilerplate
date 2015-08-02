@@ -1,18 +1,98 @@
-// Blueprint | Summer of Dev
+/*
+    Naming Conventions:
+
+    - primary
+    - secondary
+    - tertiary
+    - quaternary
+    - quinary
+
+    - tint-1
+    - tint-2
+    - tone-1
+    - tone-2
+
+ */
+
 
 
 // Breakpoints
-$slicer-breakpoints: 0 400px 600px 800px 1020px 1200px;
+$breakpoint-horizontal: (
+    base: 0,
+    tiny: 400px,
+    small: 600px,
+    medium: 800px,
+    regular: 1000px,
+    large: 1200px
+);
+
 
 
 // Folders
-$folder-img: '../img';
-$folder-font: '../font';
+$folder-img:    '../image';
+$folder-font:   '../font';
+
 
 
 // Colors
+$color-white:           #FFFFFF;
+$color-black:           #000000;
+
+// $color-primary:     $color-white;
+// $color-secondary:   $color-white;
+// $color-tertiary:    $color-black;
+// $color-quaternary:  $color-black;
+
+// $color-tint-1:      $color-black;
+// $color-tint-2:      $color-black;
 
 
 
 // Typography
 $font-arial: "Arial", sans-serif; // Remove if not used
+
+$font-primary: $font-arial;
+
+$weight-light:      300;
+$weight-regular:    400;
+$weight-medium:     500;
+$weight-bold:       600;
+$weight-heavy:      700;
+
+
+
+// Spacing
+$spacing-base:      1em;
+$spacing-primary:   $spacing-primary * 1.4;
+$spacing-secondary: $spacing-primary * 2;
+
+
+
+// Grid
+$grid-columns: 12;
+$grid-gutter-width: (
+    'sm': rem(10px),
+    'md': rem(12px),
+    'lg': rem(16px),
+);
+
+
+
+// Widths & Heights
+
+$padding-width:     rem(20px);
+$padding-height:    rem(20px);
+
+$constraint-width:      rem(1140px) - ($padding-width * 2);
+$constraint-width-md:   rem(960px) - ($padding-width * 2);
+
+
+
+// Shapes
+$box-radius: 2px;
+
+
+
+// Transitions
+$transition-speed:  0.25s;
+$transition-easing: ease;

@@ -1,0 +1,93 @@
+/*
+    Type
+ */
+html {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: $spacing-primary;
+    text-rendering: geometricPrecision;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+
+
+// Headings
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+
+
+// Sizes
+%text-small {
+    font-size: rem(14px);
+}
+
+%text-tiny {
+    font-size: rem(12px);
+}
+
+
+
+// Link
+a {
+    color: $color-primary;
+    text-decoration: none;
+
+    transition: color $transition-speed $transition-easing;
+
+    &:hover,
+    &:focus {
+        color: $color-secondary;
+        outline: none;
+    }
+}
+
+
+
+// Transformation
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+
+
+// Alignment
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}

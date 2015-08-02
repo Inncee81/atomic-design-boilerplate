@@ -1,0 +1,26 @@
+/*
+    Alignment
+ */
+.align-stretch {
+    align-self: stretch;
+}
+
+.align-between {
+    justify-content: space-between;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-v-center {
+    align-items: center;
+}
+
+.align-v-end {
+    align-content: flex-end;
+}

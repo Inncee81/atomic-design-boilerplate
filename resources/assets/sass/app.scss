@@ -1,16 +1,16 @@
-// Blueprint | Summer of Dev
-
-
 // Dependencies
 @import "bourbon";
 @import "normalize";
 @import "slicer";
 
 @import "variable";
+@import "mixin";
 @import "font";
 
 
 // Atoms
+@import "atom/alignment";
+@import "atom/type";
 
 
 // Molecules
