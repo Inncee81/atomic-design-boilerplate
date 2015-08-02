@@ -38,8 +38,8 @@ $folder-font:   '../font';
 $color-white:           #FFFFFF;
 $color-black:           #000000;
 
-// $color-primary:     $color-white;
-// $color-secondary:   $color-white;
+$color-primary:     $color-white;
+$color-secondary:   $color-black;
 // $color-tertiary:    $color-black;
 // $color-quaternary:  $color-black;
 
@@ -63,8 +63,8 @@ $weight-heavy:      700;
 
 // Spacing
 $spacing-base:      1em;
-$spacing-primary:   $spacing-primary * 1.4;
-$spacing-secondary: $spacing-primary * 2;
+$spacing-primary:   $spacing-base * 1.4;
+$spacing-secondary: $spacing-base * 2;
 
 
 
