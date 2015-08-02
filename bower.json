@@ -1,19 +1,21 @@
 {
   "name": "blueprint",
-  "version": "2.0.0",
-  "homepage": "https://github.com/summer-of-dev/blueprint",
+  "version": "3.0.0",
+  "homepage": "git@summerofdev.git.beanstalkapp.com:/summerofdev.git",
   "authors": [
-    "Te Riu Warren <te@summerofdev.co.nz>"
+    "Te Riu Warren <te@summerofdev.com>"
   ],
   "moduleType": [
     "node"
   ],
   "license": "MIT",
+  "private": true,
   "dependencies": {
-    "modernizr": "~2.8.3",
-    "jquery": "~2.1.4",
+    "min": "git@github.com:wjdp/min.js.git#~0.2.4",
     "normalize.css": "~3.0.3",
-    "slice": "~1.1.0"
-  },
-  "devDependencies": {}
+    "picturefill": "~2.3.1",
+    "svg4everybody": "~1.0.0",
+    "slicer": "~2.0.0",
+    "vue": "~0.12.9"
+  }
 }

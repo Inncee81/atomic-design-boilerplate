@@ -1,4 +1,4 @@
-// Version 1.2.0 - created by Summer of Dev
+// Version 1.3.0 - created by Summer of Dev
 
 /*
     Import modules
@@ -13,6 +13,7 @@ require('laravel-elixir-livereload');
  */
 var bourbon = require('node-bourbon'),
     elixir = require('laravel-elixir'),
+    browserify = require('laravel-elixir-browserify'),
     gulp = require('gulp'),
     modernizr = require('gulp-modernizr'),
     uglify = require('gulp-uglify'),
@@ -58,7 +59,16 @@ elixir(function(mix) {
     /*
         Assets - Javascript
      */
-    mix.browserify('all.js', outputJsFile, 'resources/assets/js/', {});
+    browserify.init();
+    mix.browserify('resources/assets/js/all.js', {
+        debug: true,
+        transform: ['babelify'],
+        // transform: ['vueify'],
+        output: 'public/js'
+    });
+
+    mix.scriptsIn('resources/assets/js/polyfill/', 'public/js/polyfill.js');
+    mix.scriptsIn('resources/assets/js/vendor/', 'public/js/vendor.js');
 
     if(elixir.config.production) {
         mix.compressScripts(outputJsFile, outputJsDir);
@@ -73,7 +83,7 @@ elixir(function(mix) {
         includePaths: [
             bourbon.includePaths,
             'vendor/bower_components/normalize.css/',
-            'vendor/bower_components/slice/'
+            'vendor/bower_components/slicer/'
         ]
     });
 
@@ -83,40 +93,24 @@ elixir(function(mix) {
         Copy - Bower
      */
     mix.copy(
-        'vendor/bower_components/jquery/dist/jquery.min.js',
-        'public/js/vendor/jquery.js'
-    )
-    .copy(
-        'vendor/bower_components/jquery/dist/jquery.min.map',
-        'public/js/vendor/jquery.min.map'
-    )
-    .copy(
         'vendor/bower_components/normalize.css/normalize.css',
         'vendor/bower_components/normalize.css/normalize.scss'
     )
     .copy(
-        'vendor/bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js',
-        'public/js/polyfill/viewport-units-buggyfill.js'
-    );
-
-
-
-    /*
-        Copy - Fonts
-     */
-    mix.copy(
-        'resources/assets/font',
-        'public/font'
-    );
-
-
-
-    /*
-        Copy - Images
-     */
-    mix.copy(
-        'resources/assets/img',
-        'public/img'
+        'vendor/bower_components/svg4everybody/svg4everybody.min.js',
+        'resources/assets/js/polyfill/svg4everybody.js'
+    )
+    .copy(
+        'vendor/bower_components/picturefill/dist/picturefill.min.js',
+        'resources/assets/js/polyfill/picturefill.js'
+    )
+    .copy(
+        'vendor/bower_components/min/dist/$.min.js',
+        'resources/assets/js/vendor/$.js'
+    )
+    .copy(
+        'vendor/bower_components/vue/dist/vue.min.js',
+        'resources/assets/js/vendor/vue.js'
     );
 
 
@@ -127,20 +121,4 @@ elixir(function(mix) {
         mix.livereload([reloadCss, reloadJs, reloadAppFiles]);
     }
 
-});
-
-
-/*
-    Task - Modernizr customise
- */
-gulp.task('modernizr', function() {
-    return gulp.src('*.js')
-        .pipe(modernizr({
-            devFile: 'vendor/bower_components/modernizr/modernizr.js',
-            options: [
-                'setClasses'
-            ]
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('public/js/vendor'));
 });
