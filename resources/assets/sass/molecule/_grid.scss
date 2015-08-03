@@ -12,16 +12,16 @@
 // Row
 .row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
 }
 
 
 
 // Column
-.column-flex {
+.column {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 @include make-grid(sm);
