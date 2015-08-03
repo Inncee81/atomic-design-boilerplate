@@ -1,11 +1,7 @@
 /*
     Alignment
  */
-.align-stretch {
-    align-self: stretch;
-}
-
-.align-between {
+.justify-between {
     justify-content: space-between;
 }
 
@@ -17,10 +13,10 @@
     align-items: flex-end;
 }
 
-.align-v-center {
+.align-center {
     align-items: center;
 }
 
-.align-v-end {
+.align-end {
     align-content: flex-end;
 }
