@@ -1,8 +1,6 @@
-node_modules
-bower_components
-/vendor
-.vagrant
-.tmp
-.sass-cache
 *.log
 *.map
+.tmp
+.sass-cache
+/node_modules
+/vendor
