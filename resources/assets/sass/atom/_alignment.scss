@@ -1,8 +1,8 @@
 /*
     Alignment
  */
-.justify-between {
-    justify-content: space-between;
+.align-stretch {
+    align-self: stretch;
 }
 
 .align-start {
@@ -19,4 +19,12 @@
 
 .align-end {
     align-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
 }

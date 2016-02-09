@@ -1,34 +1,40 @@
 {
-  "name": "blueprint",
+  "name": "front-end-blueprint",
   "version": "3.0.0",
-  "description": "Summer of Dev Blueprint",
-  "repository": "summer-of-dev/blueprint",
-  "author": {
-    "name": "Te Riu Warren",
-    "email": "te@summerofdev.com",
-    "url": "https://github.com/summer-of-dev/"
+  "description": "Front End Blueprint",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teriu/front-end-blueprint.git"
   },
+  "author": "Te Riu Warren <teriu@teriu.name> (https://github.com/teriu)",
+  "license": "MIT",
   "devDependencies": {
-    "babel": "^5.8.20",
-    "babelify": "^6.1.3",
-    "browserify": "^11.0.1",
-    "browserify-shim": "^3.8.6",
+    "babel": "^6.0.15",
+    "babelify": "^7.2.0",
+    "backstopjs": "^1.0.2",
+    "elixir-jshint": "^1.1.2",
     "gulp": "^3.8.11",
-    "gulp-modernizr": "^1.0.0-alpha",
-    "gulp-uglify": "^1.2.0",
-    "laravel-elixir": "^0.18.7",
-    "laravel-elixir-browserify": "^0.8.1",
-    "laravel-elixir-jshint": "^0.1.7",
-    "laravel-elixir-livereload": "0.0.3",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.2",
+    "laravel-elixir": "^4.2.0",
+    "laravel-elixir-livereload": "^1.1.3",
     "node-bourbon": "^4.2.2",
-    "vueify": "^1.1.5"
+    "node-sass": "^3.3.3"
   },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
+  "dependencies": {
+    "normalize.css": "^3.0.3",
+    "sass-slicer": "^2.1.4",
+    "svg4everybody": "^2.0.1"
   },
-  "browserify-shim": {
-    "jQuery": "global:jQuery"
-  }
+  "bugs": {
+    "url": "https://github.com/teriu/front-end-blueprint/issues"
+  },
+  "homepage": "https://github.com/teriu/front-end-blueprint#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "front end"
+  ]
 }

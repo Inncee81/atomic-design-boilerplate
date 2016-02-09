@@ -3,11 +3,15 @@ Blueprint
 
 A no frills way of getting your next web project up and running.
 
-We open people's eyes to what is possible.
-
 
 
 ### Changelog
+
+**Version 3.0.0**
+
+- Moved to a 'Front End' focus
+- Removed Ansible/Vagrant
+- Removed Bower
 
 **Version 2.0.0**
 

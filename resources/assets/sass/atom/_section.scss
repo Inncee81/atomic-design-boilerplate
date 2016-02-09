@@ -1,0 +1,8 @@
+/*
+    Section
+ */
+.section {
+    &:not(:last-child) {
+        // margin-bottom: ;
+    }
+}

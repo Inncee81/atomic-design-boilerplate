@@ -1,0 +1,71 @@
+/*
+    Button
+ */
+button[type="button"],
+button[type="submit"] {
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    line-height: 1;
+    white-space: nowrap;
+
+    @include appearance-none;
+}
+
+a.button {
+    line-height: 1;
+
+    text-decoration: none;
+}
+
+a.button,
+.button[type="button"],
+.button[type="submit"] {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    // padding: ;
+
+    // color: ;
+
+    border: 1px solid transparent;
+    // border-radius: ;
+
+    transition: background-color 0.2s,
+                border-color 0.2s,
+                color 0.2s;
+
+
+    // Hovers
+    &:hover {
+    }
+
+
+    // Types
+    &[disabled] {
+    }
+
+    &.block {
+        display: block;
+    }
+
+    &.default {
+
+        &:hover {
+        }
+    }
+
+    &.default.inverse {
+
+        &:hover {
+        }
+    }
+
+    &.primary {
+
+        &:hover {
+        }
+    }
+}

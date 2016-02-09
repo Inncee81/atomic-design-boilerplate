@@ -1,9 +1,13 @@
-// Version 1.3.0 - created by Summer of Dev
+// Version 1.6.0
+// Author: Te Riu Warren
+// Pixel Fusion
+
+
 
 /*
     Import modules
  */
-require('laravel-elixir-jshint');
+require('elixir-jshint');
 require('laravel-elixir-livereload');
 
 
@@ -13,16 +17,17 @@ require('laravel-elixir-livereload');
  */
 var bourbon = require('node-bourbon'),
     elixir = require('laravel-elixir'),
-    browserify = require('laravel-elixir-browserify'),
     gulp = require('gulp'),
-    modernizr = require('gulp-modernizr'),
+    task = elixir.Task,
     uglify = require('gulp-uglify'),
     outputCssDir = 'public/css',
     outputJsDir = 'public/js',
-    outputJsFile = outputJsDir + '/all.js',
-    reloadCss = outputCssDir + '/*.css',
-    reloadJs = outputJsDir + '/*.js',
-    reloadAppFiles = 'public/*.php';
+    outputJsFile = outputJsDir + '/app.js',
+    dependencyDir = 'node_modules',
+    dependencies = {
+        normalize:     dependencyDir + '/normalize.css/',
+        slicer:        dependencyDir + '/sass-slicer/'
+    };
 
 
 
@@ -30,14 +35,16 @@ var bourbon = require('node-bourbon'),
     Extension - JS Compress
  */
 elixir.extend('compressScripts', function(source, dest) {
-
-    gulp.task('compressScripts', function() {
+    new task('compressScripts', function() {
         return gulp.src(source)
-            .pipe(uglify({compress: {drop_console: true, drop_debugger: true}}))
+            .pipe(uglify({
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true
+                }
+            }))
             .pipe(gulp.dest(dest));
     });
-
-    return this.queueTask('compressScripts');
 });
 
 
@@ -51,24 +58,14 @@ elixir(function(mix) {
     /*
         Lint - Javascript
      */
-    mix.jshint(['resources/assets/js/module/*.js', 'resources/assets/js/*.js']);
-    // CSS lint to go here, based on RECESS
+    mix.jshint(['resources/assets/js/**/*.js', 'resources/assets/js/*.js']);
 
 
 
     /*
         Assets - Javascript
      */
-    browserify.init();
-    mix.browserify('resources/assets/js/all.js', {
-        debug: true,
-        transform: ['babelify'],
-        // transform: ['vueify'],
-        output: 'public/js'
-    });
-
-    mix.scriptsIn('resources/assets/js/polyfill/', 'public/js/polyfill.js');
-    mix.scriptsIn('resources/assets/js/vendor/', 'public/js/vendor.js');
+    mix.browserify('resources/assets/js/app.js');
 
     if(elixir.config.production) {
         mix.compressScripts(outputJsFile, outputJsDir);
@@ -79,46 +76,39 @@ elixir(function(mix) {
     /*
         Assets - SASS
      */
-    mix.sass('resources/assets/sass/*.scss', outputCssDir, {
+    mix.sass('app.scss', outputCssDir, {
         includePaths: [
             bourbon.includePaths,
-            'vendor/bower_components/normalize.css/',
-            'vendor/bower_components/slicer/'
+            dependencies.normalize,
+            dependencies.slicer
         ]
     });
 
 
 
     /*
-        Copy - Bower
+        Copy
      */
     mix.copy(
-        'vendor/bower_components/normalize.css/normalize.css',
-        'vendor/bower_components/normalize.css/normalize.scss'
-    )
-    .copy(
-        'vendor/bower_components/svg4everybody/svg4everybody.min.js',
-        'resources/assets/js/polyfill/svg4everybody.js'
-    )
-    .copy(
-        'vendor/bower_components/picturefill/dist/picturefill.min.js',
-        'resources/assets/js/polyfill/picturefill.js'
-    )
-    .copy(
-        'vendor/bower_components/min/dist/$.min.js',
-        'resources/assets/js/vendor/$.js'
-    )
-    .copy(
-        'vendor/bower_components/vue/dist/vue.min.js',
-        'resources/assets/js/vendor/vue.js'
+        dependencies.normalize + 'normalize.css', // Need this so @import includes into our generated file
+        dependencies.normalize + 'normalize.scss'
     );
 
 
+
     /*
-        Watch - Livereload
+        Version
      */
-    if(!elixir.config.production) {
-        mix.livereload([reloadCss, reloadJs, reloadAppFiles]);
-    }
+    mix.version([
+        'public/css/app.css',
+        'public/js/app.js'
+    ]);
+
+
+
+    /*
+        Live Reload
+     */
+    mix.livereload();
 
 });

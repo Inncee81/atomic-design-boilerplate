@@ -1,0 +1,29 @@
+/*
+    Layout
+ */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+}
+
+
+// Constraints
+.constrain-width {
+    max-width: $constraint-width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: rem(15px);
+    padding-left: rem(15px);
+
+    @include from('small') {
+        padding-right: rem(20px);
+        padding-left: rem(20px);
+    }
+
+    &.md {
+        max-width: $constraint-width-md;
+    }
+}
