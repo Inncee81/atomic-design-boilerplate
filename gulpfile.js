@@ -74,6 +74,16 @@ elixir(function(mix) {
 
 
     /*
+        Copy
+     */
+    mix.copy(
+        dependencies.normalize + 'normalize.css', // Need this so @import includes into our generated file
+        dependencies.normalize + 'normalize.scss'
+    );
+
+
+
+    /*
         Assets - SASS
      */
     mix.sass('app.scss', outputCssDir, {
@@ -83,16 +93,6 @@ elixir(function(mix) {
             dependencies.slicer
         ]
     });
-
-
-
-    /*
-        Copy
-     */
-    mix.copy(
-        dependencies.normalize + 'normalize.css', // Need this so @import includes into our generated file
-        dependencies.normalize + 'normalize.scss'
-    );
 
 
 
